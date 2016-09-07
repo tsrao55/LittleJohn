@@ -21,6 +21,8 @@
 		1627A1671D7F3B76005F560E /* LJProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1661D7F3B76005F560E /* LJProduct.m */; };
 		1627A1681D7F3B76005F560E /* LJProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1661D7F3B76005F560E /* LJProduct.m */; };
 		1627A16F1D7F42D3005F560E /* LJProductTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A16E1D7F42D3005F560E /* LJProductTests.m */; };
+		1627A1721D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1711D7FD2FE005F560E /* LJProductDownloadManager.m */; };
+		1627A1731D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1711D7FD2FE005F560E /* LJProductDownloadManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		1627A1651D7F3B76005F560E /* LJProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProduct.h; path = "Data Models/LJProduct.h"; sourceTree = "<group>"; };
 		1627A1661D7F3B76005F560E /* LJProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProduct.m; path = "Data Models/LJProduct.m"; sourceTree = "<group>"; };
 		1627A16E1D7F42D3005F560E /* LJProductTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductTests.m; path = "Data Models/LJProductTests.m"; sourceTree = "<group>"; };
+		1627A1701D7FD2FE005F560E /* LJProductDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProductDownloadManager.h; path = "Download Manager/LJProductDownloadManager.h"; sourceTree = "<group>"; };
+		1627A1711D7FD2FE005F560E /* LJProductDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductDownloadManager.m; path = "Download Manager/LJProductDownloadManager.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			children = (
 				1627A1641D7F3B46005F560E /* Data Models */,
 				1627A15F1D7F3A44005F560E /* Download Managers */,
+				1627A1741D7FED04005F560E /* Parsers */,
 				1602508D1D7E9AC80083C792 /* Network Module */,
 				1602505D1D7E9AB70083C792 /* AppDelegate.h */,
 				1602505E1D7E9AB70083C792 /* AppDelegate.m */,
@@ -177,6 +182,8 @@
 		1627A15F1D7F3A44005F560E /* Download Managers */ = {
 			isa = PBXGroup;
 			children = (
+				1627A1701D7FD2FE005F560E /* LJProductDownloadManager.h */,
+				1627A1711D7FD2FE005F560E /* LJProductDownloadManager.m */,
 			);
 			name = "Download Managers";
 			sourceTree = "<group>";
@@ -196,6 +203,13 @@
 				1627A16E1D7F42D3005F560E /* LJProductTests.m */,
 			);
 			name = "Data Models";
+			sourceTree = "<group>";
+		};
+		1627A1741D7FED04005F560E /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Parsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +345,7 @@
 				160250621D7E9AB70083C792 /* ViewController.m in Sources */,
 				1602505F1D7E9AB70083C792 /* AppDelegate.m in Sources */,
 				1602505C1D7E9AB70083C792 /* main.m in Sources */,
+				1627A1721D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */,
 				160250901D7E9B070083C792 /* LJWebserviceHandler.m in Sources */,
 				1627A1671D7F3B76005F560E /* LJProduct.m in Sources */,
 			);
@@ -343,6 +358,7 @@
 				160250751D7E9AB70083C792 /* LittleJohnTests.m in Sources */,
 				1627A1681D7F3B76005F560E /* LJProduct.m in Sources */,
 				160250941D7E9DA40083C792 /* LJWebserviceHandlerTests.m in Sources */,
+				1627A1731D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */,
 				160250911D7E9B070083C792 /* LJWebserviceHandler.m in Sources */,
 				1627A16F1D7F42D3005F560E /* LJProductTests.m in Sources */,
 			);
