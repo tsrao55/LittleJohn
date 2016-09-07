@@ -8,6 +8,7 @@
 
 #import "LJProductDownloadManager.h"
 #import "LJWebserviceHandler.h"
+#import "LJProductsResponseParser.h"
 
 static NSString* const productURL = @"https://api.johnlewis.com/v1/products/search?q=dishwasher&key=Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb&pageSize=20";
 
@@ -36,6 +37,11 @@ static NSString* const productURL = @"https://api.johnlewis.com/v1/products/sear
     if (responseDictionary && !jsonError)
     {
       //Call the didFinishWith products
+      NSArray *products = [LJProductsResponseParser parseProductsFromResponse:responseDictionary];
+      if ([self.delegate respondsToSelector:@selector(downloadManager:didGetLatestProducts:)])
+      {
+        [self.delegate downloadManager:self didGetLatestProducts:products];
+      }
     }
     else
     {

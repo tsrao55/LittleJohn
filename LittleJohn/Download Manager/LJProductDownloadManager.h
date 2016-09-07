@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class LJProductDownloadManager;
+
+@protocol LJProductDownloadManagerDelegate <NSObject>
+-(void)downloadManager:(LJProductDownloadManager*)downloadManager didGetLatestProducts:(NSArray*)products;
+//Needs another delegate method to throw errors
+@end
+
 @interface LJProductDownloadManager : NSObject
+
+@property(nonatomic, weak) id<LJProductDownloadManagerDelegate> delegate;
 
 //This needs to be accepting page number in future to support the multiple pages
 -(void)getLatestProducts;
