@@ -23,6 +23,10 @@
 		1627A16F1D7F42D3005F560E /* LJProductTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A16E1D7F42D3005F560E /* LJProductTests.m */; };
 		1627A1721D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1711D7FD2FE005F560E /* LJProductDownloadManager.m */; };
 		1627A1731D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1711D7FD2FE005F560E /* LJProductDownloadManager.m */; };
+		1627A1771D7FED4D005F560E /* LJProductsResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1761D7FED4D005F560E /* LJProductsResponseParser.m */; };
+		1627A1781D7FED4D005F560E /* LJProductsResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1761D7FED4D005F560E /* LJProductsResponseParser.m */; };
+		1627A17B1D7FEEFD005F560E /* LJProductsResponseParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A17A1D7FEEFD005F560E /* LJProductsResponseParserTests.m */; };
+		1627A17D1D7FEF2F005F560E /* ProductsSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 1627A17C1D7FEF2F005F560E /* ProductsSample.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		1627A16E1D7F42D3005F560E /* LJProductTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductTests.m; path = "Data Models/LJProductTests.m"; sourceTree = "<group>"; };
 		1627A1701D7FD2FE005F560E /* LJProductDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProductDownloadManager.h; path = "Download Manager/LJProductDownloadManager.h"; sourceTree = "<group>"; };
 		1627A1711D7FD2FE005F560E /* LJProductDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductDownloadManager.m; path = "Download Manager/LJProductDownloadManager.m"; sourceTree = "<group>"; };
+		1627A1751D7FED4D005F560E /* LJProductsResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProductsResponseParser.h; path = Parsers/LJProductsResponseParser.h; sourceTree = "<group>"; };
+		1627A1761D7FED4D005F560E /* LJProductsResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductsResponseParser.m; path = Parsers/LJProductsResponseParser.m; sourceTree = "<group>"; };
+		1627A17A1D7FEEFD005F560E /* LJProductsResponseParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductsResponseParserTests.m; path = Parsers/LJProductsResponseParserTests.m; sourceTree = "<group>"; };
+		1627A17C1D7FEF2F005F560E /* ProductsSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProductsSample.json; path = Parsers/ProductsSample.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,7 @@
 		160250731D7E9AB70083C792 /* LittleJohnTests */ = {
 			isa = PBXGroup;
 			children = (
+				1627A1791D7FEED2005F560E /* Parsers */,
 				1627A16D1D7F42A1005F560E /* Data Models */,
 				160250921D7E9D730083C792 /* Network Module */,
 				160250741D7E9AB70083C792 /* LittleJohnTests.m */,
@@ -208,6 +217,17 @@
 		1627A1741D7FED04005F560E /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				1627A1751D7FED4D005F560E /* LJProductsResponseParser.h */,
+				1627A1761D7FED4D005F560E /* LJProductsResponseParser.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		1627A1791D7FEED2005F560E /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				1627A17A1D7FEEFD005F560E /* LJProductsResponseParserTests.m */,
+				1627A17C1D7FEF2F005F560E /* ProductsSample.json */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -325,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1627A17D1D7FEF2F005F560E /* ProductsSample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1627A1771D7FED4D005F560E /* LJProductsResponseParser.m in Sources */,
 				160250621D7E9AB70083C792 /* ViewController.m in Sources */,
 				1602505F1D7E9AB70083C792 /* AppDelegate.m in Sources */,
 				1602505C1D7E9AB70083C792 /* main.m in Sources */,
@@ -355,8 +377,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1627A1781D7FED4D005F560E /* LJProductsResponseParser.m in Sources */,
 				160250751D7E9AB70083C792 /* LittleJohnTests.m in Sources */,
 				1627A1681D7F3B76005F560E /* LJProduct.m in Sources */,
+				1627A17B1D7FEEFD005F560E /* LJProductsResponseParserTests.m in Sources */,
 				160250941D7E9DA40083C792 /* LJWebserviceHandlerTests.m in Sources */,
 				1627A1731D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */,
 				160250911D7E9B070083C792 /* LJWebserviceHandler.m in Sources */,
