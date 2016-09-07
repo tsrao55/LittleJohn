@@ -49,7 +49,10 @@
 {
   NSData *downloadedData = [NSData dataWithContentsOfURL:location];
   
-  [self.delegate webServiceHandler:self didFinishWithRespose:downloadedData withError:nil];
+  if ([self.delegate respondsToSelector:@selector(webServiceHandler:didFinishWithRespose:withError:)])
+  {
+    [self.delegate webServiceHandler:self didFinishWithRespose:downloadedData withError:nil];
+  }
   
   self.downloaded = YES;
 }
