@@ -18,6 +18,7 @@
 		160250901D7E9B070083C792 /* LJWebserviceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1602508F1D7E9B070083C792 /* LJWebserviceHandler.m */; };
 		160250911D7E9B070083C792 /* LJWebserviceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1602508F1D7E9B070083C792 /* LJWebserviceHandler.m */; };
 		160250941D7E9DA40083C792 /* LJWebserviceHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 160250931D7E9DA40083C792 /* LJWebserviceHandlerTests.m */; };
+		160EED351D806FFF002A14B0 /* LLJProductsViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 160EED341D806FFF002A14B0 /* LLJProductsViewModelTests.m */; };
 		1627A1671D7F3B76005F560E /* LJProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1661D7F3B76005F560E /* LJProduct.m */; };
 		1627A1681D7F3B76005F560E /* LJProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1661D7F3B76005F560E /* LJProduct.m */; };
 		1627A16F1D7F42D3005F560E /* LJProductTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A16E1D7F42D3005F560E /* LJProductTests.m */; };
@@ -27,6 +28,8 @@
 		1627A1781D7FED4D005F560E /* LJProductsResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1761D7FED4D005F560E /* LJProductsResponseParser.m */; };
 		1627A17B1D7FEEFD005F560E /* LJProductsResponseParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A17A1D7FEEFD005F560E /* LJProductsResponseParserTests.m */; };
 		1627A17D1D7FEF2F005F560E /* ProductsSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 1627A17C1D7FEF2F005F560E /* ProductsSample.json */; };
+		1627A1811D7FF4F7005F560E /* LJProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */; };
+		1627A1821D7FF4F7005F560E /* LJProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,7 @@
 		1602508E1D7E9B070083C792 /* LJWebserviceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJWebserviceHandler.h; path = "Network Module/LJWebserviceHandler.h"; sourceTree = "<group>"; };
 		1602508F1D7E9B070083C792 /* LJWebserviceHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJWebserviceHandler.m; path = "Network Module/LJWebserviceHandler.m"; sourceTree = "<group>"; };
 		160250931D7E9DA40083C792 /* LJWebserviceHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJWebserviceHandlerTests.m; path = "Network Module/LJWebserviceHandlerTests.m"; sourceTree = "<group>"; };
+		160EED341D806FFF002A14B0 /* LLJProductsViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLJProductsViewModelTests.m; path = "LittleJohnTests/View Models/LLJProductsViewModelTests.m"; sourceTree = SOURCE_ROOT; };
 		1627A1651D7F3B76005F560E /* LJProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProduct.h; path = "Data Models/LJProduct.h"; sourceTree = "<group>"; };
 		1627A1661D7F3B76005F560E /* LJProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProduct.m; path = "Data Models/LJProduct.m"; sourceTree = "<group>"; };
 		1627A16E1D7F42D3005F560E /* LJProductTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductTests.m; path = "Data Models/LJProductTests.m"; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		1627A1761D7FED4D005F560E /* LJProductsResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductsResponseParser.m; path = Parsers/LJProductsResponseParser.m; sourceTree = "<group>"; };
 		1627A17A1D7FEEFD005F560E /* LJProductsResponseParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductsResponseParserTests.m; path = Parsers/LJProductsResponseParserTests.m; sourceTree = "<group>"; };
 		1627A17C1D7FEF2F005F560E /* ProductsSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProductsSample.json; path = Parsers/ProductsSample.json; sourceTree = "<group>"; };
+		1627A17F1D7FF4F7005F560E /* LJProductsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProductsViewModel.h; path = "View Models/LJProductsViewModel.h"; sourceTree = "<group>"; };
+		1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductsViewModel.m; path = "View Models/LJProductsViewModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 		160250591D7E9AB70083C792 /* LittleJohn */ = {
 			isa = PBXGroup;
 			children = (
+				1627A17E1D7FF48F005F560E /* View Models */,
 				1627A1641D7F3B46005F560E /* Data Models */,
 				1627A15F1D7F3A44005F560E /* Download Managers */,
 				1627A1741D7FED04005F560E /* Parsers */,
@@ -230,6 +237,16 @@
 				1627A17C1D7FEF2F005F560E /* ProductsSample.json */,
 			);
 			name = Parsers;
+			sourceTree = "<group>";
+		};
+		1627A17E1D7FF48F005F560E /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				1627A17F1D7FF4F7005F560E /* LJProductsViewModel.h */,
+				1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */,
+				160EED341D806FFF002A14B0 /* LLJProductsViewModelTests.m */,
+			);
+			name = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +386,7 @@
 				1602505C1D7E9AB70083C792 /* main.m in Sources */,
 				1627A1721D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */,
 				160250901D7E9B070083C792 /* LJWebserviceHandler.m in Sources */,
+				1627A1811D7FF4F7005F560E /* LJProductsViewModel.m in Sources */,
 				1627A1671D7F3B76005F560E /* LJProduct.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,7 +398,9 @@
 				1627A1781D7FED4D005F560E /* LJProductsResponseParser.m in Sources */,
 				160250751D7E9AB70083C792 /* LittleJohnTests.m in Sources */,
 				1627A1681D7F3B76005F560E /* LJProduct.m in Sources */,
+				1627A1821D7FF4F7005F560E /* LJProductsViewModel.m in Sources */,
 				1627A17B1D7FEEFD005F560E /* LJProductsResponseParserTests.m in Sources */,
+				160EED351D806FFF002A14B0 /* LLJProductsViewModelTests.m in Sources */,
 				160250941D7E9DA40083C792 /* LJWebserviceHandlerTests.m in Sources */,
 				1627A1731D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */,
 				160250911D7E9B070083C792 /* LJWebserviceHandler.m in Sources */,
