@@ -38,24 +38,14 @@
 
 - (void)webServiceHandler:(LJWebserviceHandler *)webserviceHandler didFinishWithRespose:(NSData *)data withError:(NSError *)error
 {
-  if (!error)
+  if (!error && data)
   {
-    NSError *jsonError;
-    id jsonCollection = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-    if (!jsonError && jsonCollection)
-    {
-      [self.downloadExpectation fulfill];
-    }
-    else
-    {
-      NSLog(@"Download Data failed with error: %@",[error description]);
-    }
+    [self.downloadExpectation fulfill];
   }
-}
-
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+  else
+  {
+    NSLog(@"Download Data failed with error: %@",[error description]);
+  }
 }
 
 - (void)testPerformanceExample {

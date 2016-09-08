@@ -8,55 +8,36 @@
 
 #import "LJWebserviceHandler.h"
 
-@interface LJWebserviceHandler() <NSURLSessionDelegate, NSURLSessionDataDelegate, NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
-
-@property (nonatomic, assign) BOOL downloaded;
-@end
-
-
 @implementation LJWebserviceHandler
 
 -(void)getDataForURL:(NSURL *)url withBody:(NSData *)httpBody
 {
   NSURLSessionConfiguration *defaultConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-  NSURLSession *theSession = [NSURLSession sessionWithConfiguration:defaultConfig delegate:self delegateQueue:nil];
-  NSURLSessionDownloadTask *downloadTask = [theSession downloadTaskWithURL:url];
-  self.downloaded = NO;
-  [downloadTask resume];
-}
-
--(BOOL)isDownlodCompleted
-{
-  return self.downloaded;
-}
-
--(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
-{
-  NSLog(@"response");
-}
-
--(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
-{
-  NSLog(@"data + ");
-}
-
--(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
-{
-  //    self.downloaded = YES;
-}
-
--(void)URLSession:(NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(nonnull NSURL *)location
-{
-  dispatch_async(dispatch_get_main_queue(), ^{
-    NSData *downloadedData = [NSData dataWithContentsOfURL:location];
-    
-    if ([self.delegate respondsToSelector:@selector(webServiceHandler:didFinishWithRespose:withError:)])
+  
+  NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:defaultConfig];
+  
+  NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc] initWithURL:url];
+  
+  [theRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+  
+  if (httpBody)
+  {
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody:httpBody];
+  }
+  else
+  {
+    [theRequest setHTTPMethod:@"GET"];
+  }
+  NSURLSessionDataTask *theTask = [urlSession dataTaskWithRequest:theRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+  {
+    if (self.delegate)
     {
-      [self.delegate webServiceHandler:self didFinishWithRespose:downloadedData withError:nil];
+      [self.delegate webServiceHandler:self didFinishWithRespose:data withError:error];
     }
     
-    self.downloaded = YES;
-  });
+  }];
+  [theTask resume];
 }
 
 @end

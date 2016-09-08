@@ -25,7 +25,7 @@ static NSString* const kProductCellIdentifier = @"ppp";
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
-  self.viewModel = [LJProductsViewModel new];
+  self.viewModel = [[LJProductsViewModel alloc] init];
   self.viewModel.delegate = self;
   self.productsCollectionView.backgroundColor = [UIColor darkGrayColor];
 }
@@ -66,13 +66,22 @@ static NSString* const kProductCellIdentifier = @"ppp";
 #pragma mark - UICollectionViewDelegateFlowLayout
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  float width,height;
+  float width = 255,height = 335;
   if (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular &&
       self.view.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular)
   {
-    
+    //calculate best sizes for ipad
   }
-  return CGSizeMake(255, 335);
+  else if (self.view.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular)
+  {
+    //Iphone 6 plus portrait, want to show more cells?
+  }
+  else
+  {
+    //smaller devices may be need to show only one cell at a time.
+  }
+  
+  return CGSizeMake(width, height);
 }
 
 #pragma mark - UICollectionViewDelegate

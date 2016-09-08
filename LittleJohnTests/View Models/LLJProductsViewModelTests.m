@@ -27,7 +27,7 @@
 
 -(void)testLoadProducts
 {
-  LJProductsViewModel *productsViewModel = [LJProductsViewModel new];
+  LJProductsViewModel *productsViewModel = [[LJProductsViewModel alloc] init];
   [productsViewModel loadProducts];
   XCTAssertTrue(productsViewModel.loading, @"Products View model not loading");
 }

@@ -16,9 +16,18 @@
 
 @end
 
-@interface LJWebserviceHandler : NSObject
+@protocol LJWebserviceHandlerProtocol <NSObject>
 
 @property (nonatomic, weak) id<LJWebserviceHandlerDelegate> delegate;
 
 -(void)getDataForURL:(NSURL*)url withBody:(NSData*)httpBody;
+
+@end
+
+@interface LJWebserviceHandler : NSObject <LJWebserviceHandlerProtocol>
+
+@property (nonatomic, weak) id<LJWebserviceHandlerDelegate> delegate;
+
+-(void)getDataForURL:(NSURL*)url withBody:(NSData*)httpBody;
+
 @end

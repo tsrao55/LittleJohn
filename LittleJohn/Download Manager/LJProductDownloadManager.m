@@ -13,15 +13,17 @@
 static NSString* const productURL = @"https://api.johnlewis.com/v1/products/search?q=dishwasher&key=Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb&pageSize=20";
 
 @interface LJProductDownloadManager() <LJWebserviceHandlerDelegate>
-@property (nonatomic, strong) LJWebserviceHandler *webServiceHandler;
+@property (nonatomic, strong) id<LJWebserviceHandlerProtocol> webServiceHandler;
 @end
 
 @implementation LJProductDownloadManager
 
 -(void)getLatestProducts
 {
-  LJWebserviceHandler *webServiceHandler = [LJWebserviceHandler new];
-  webServiceHandler.delegate = self;
+  
+  //CODEREVIEW: this is quite controversial... dont use new in objc i like but some dont....
+  self.webServiceHandler = [[LJWebserviceHandler alloc] init];
+  self.webServiceHandler.delegate = self;
 //  [webServiceHandler getDataForURL:[NSURL URLWithString:productURL] withBody:nil];
   
   NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"ProductsSample" ofType:@"json"];

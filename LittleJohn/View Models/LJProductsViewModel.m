@@ -25,7 +25,7 @@
 {
   if (!self.loading)
   {
-    self.downloadManager = [LJProductDownloadManager new];
+    self.downloadManager = [[LJProductDownloadManager alloc] init];
     self.downloadManager.delegate = self;
     [self.downloadManager getLatestProducts];
     self.loading = YES;
