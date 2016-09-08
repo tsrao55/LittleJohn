@@ -22,10 +22,23 @@ static NSString* const productURL = @"https://api.johnlewis.com/v1/products/sear
 {
   LJWebserviceHandler *webServiceHandler = [LJWebserviceHandler new];
   webServiceHandler.delegate = self;
-  [webServiceHandler getDataForURL:[NSURL URLWithString:productURL] withBody:nil];
+//  [webServiceHandler getDataForURL:[NSURL URLWithString:productURL] withBody:nil];
+  
+  NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"ProductsSample" ofType:@"json"];
+  NSData *jsonData = [NSData dataWithContentsOfFile:path];
+  NSError *jsonError;
+  NSDictionary *productsResponse = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                   options:NSJSONReadingAllowFragments
+                                                                     error:&jsonError];
+  if (!jsonError)
+  {
+    NSArray *products = [LJProductsResponseParser parseProductsFromResponse:productsResponse];
+    [self.delegate downloadManager:self didGetLatestProducts:products];
+  }
 }
 
 #pragma mark - LJWebserviceHandlerDelegate
+
 -(void)webServiceHandler:(LJWebserviceHandler *)webserviceHandler didFinishWithRespose:(NSData *)data withError:(NSError *)error
 {
   if (!error)
