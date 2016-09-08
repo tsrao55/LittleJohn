@@ -9,17 +9,40 @@
 #import "LJProductsViewModel.h"
 #import "ViewController.h"
 #import "LJProductDownloadManager.h"
+#import "LJProductImageDownloader.h"
+#import "LJProduct.h"
 
 @interface LJProductsViewModel() <LJProductDownloadManagerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *productsArray;
 @property (nonatomic, assign) BOOL loading;
 @property (nonatomic, strong) LJProductDownloadManager *downloadManager;
-@property (nonatomic, retain) ViewController* productsVC;
+@property (nonatomic, strong) LJProductImageDownloader *imageDownloader;
+@property (nonatomic, strong) ViewController* productsVC;
+@property (nonatomic, strong) NSMutableArray* downloadQueue;
 
 @end
 
 @implementation LJProductsViewModel
+
+-(NSMutableArray*)downloadQueue
+{
+  if (!_downloadQueue)
+  {
+    _downloadQueue = [[NSMutableArray alloc] init];
+  }
+  
+  return _downloadQueue;
+}
+
+-(LJProductImageDownloader*)imageDownloader
+{
+  if (!_imageDownloader)
+  {
+    _imageDownloader = [[LJProductImageDownloader alloc] init];
+  }
+  return _imageDownloader;
+}
 
 -(void)loadProducts
 {
@@ -30,6 +53,40 @@
     [self.downloadManager getLatestProducts];
     self.loading = YES;
   }
+}
+
+-(void)downloadImageAtIndex:(NSInteger)index
+{
+  LJProduct *product = self.productsArray[index];
+
+  if (![self.downloadQueue containsObject:product])
+  {
+    [self.downloadQueue addObject:product];
+  }
+  
+  [self downloadFromQueue];
+}
+
+-(void)downloadFromQueue
+{
+  if (self.downloadQueue.count > 0)
+  {
+    LJProduct *product = self.downloadQueue[0];
+    [self.imageDownloader getImageForProductId:product.productID
+                                       withURL:product.imageURL
+                               completionBlock:^(UIImage *downloadedImage, NSString *productId, NSError *error) {
+                                 NSArray *p = [self.productsArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"productID == %@", productId]];
+                                 LJProduct *product = p[0];
+                                 product.downloadedImage = downloadedImage;
+                                 [self.downloadQueue removeObject:product];
+                                 [self.delegate viewModel:self didFinishedDownloadingImageAtIndex:[self.productsArray indexOfObject:product]];
+                                 if (self.downloadQueue.count > 0)
+                                 {
+                                   [self downloadFromQueue];
+                                 }
+                               }];
+  }
+  
 }
 
 #pragma mark - LJProductDownloadManagerDelegate

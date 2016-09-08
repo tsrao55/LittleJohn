@@ -7,6 +7,7 @@
 //
 
 #import "LJProduct.h"
+#import "UIKit/UIKit.h"
 
 @interface LJProduct()
 
@@ -28,7 +29,8 @@
     NSDictionary *priceDictionary = [NSDictionary dictionaryWithDictionary:productDictionary[kProductPriceKey]];
     _currentPrice = [NSNumber numberWithDouble:[priceDictionary[kProductPriceNowKey] doubleValue]];
     _title = productDictionary[kProductTitleKey];
-    _imageURL = [NSURL URLWithString:productDictionary[kProductImageKey]];
+    NSString *urlString = [NSString stringWithFormat:@"https:%@", productDictionary[kProductImageKey]];
+    _imageURL = [NSURL URLWithString:urlString];
   }
   
   return self;

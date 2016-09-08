@@ -10,4 +10,10 @@
 
 @implementation LJProductCollectionViewCell
 
+-(void)prepareForReuse
+{
+  self.productImageView.image = nil;
+  self.productPriceLabel.text = @"";
+  self.productTitleLabel.text = @"";
+}
 @end

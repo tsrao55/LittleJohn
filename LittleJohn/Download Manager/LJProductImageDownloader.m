@@ -13,16 +13,19 @@
 @interface LJProductImageDownloader() <LJWebserviceHandlerDelegate>
 @property (nonatomic, strong) NSString *productId;
 @property (nonatomic, strong) LJWebserviceHandler *webserviceHandler;
+@property (nonatomic, strong) ImageDownloaderBlock completionBlock;
+
 @end
 
 @implementation LJProductImageDownloader
 
--(void)getImageForProductId:(NSString *)productId withURL:(NSURL *)url
+-(void)getImageForProductId:(NSString *)productId withURL:(NSURL *)url completionBlock:(ImageDownloaderBlock)completionBlock
 {
   self.productId = productId;
-  self.webserviceHandler = [LJWebserviceHandler new];
+  self.webserviceHandler = [[LJWebserviceHandler alloc] init];
   self.webserviceHandler.delegate = self;
-  [self.webserviceHandler getDataForURL:url withBody:nil];
+  [self.webserviceHandler downloadImageForURL:url];
+  self.completionBlock = completionBlock;
 }
 
 #pragma mark - LJWebserviceHandlerDelegate
@@ -32,13 +35,9 @@
   if (!error && data)
   {
     UIImage *downloadedImage = [UIImage imageWithData:data];
-    if (downloadedImage && [self.delegate respondsToSelector:@selector(imageDownloader:didFinishDownloading:for:)])
+    if (self.completionBlock)
     {
-      [self.delegate imageDownloader:self didFinishDownloading:downloadedImage for:self.productId];
-    }
-    else
-    {
-      //Write a delegate method for handling error
+      self.completionBlock(downloadedImage, self.productId, error);
     }
   }
 }

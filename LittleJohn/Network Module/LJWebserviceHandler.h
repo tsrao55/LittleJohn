@@ -22,6 +22,8 @@
 
 -(void)getDataForURL:(NSURL*)url withBody:(NSData*)httpBody;
 
+-(void)downloadImageForURL:(NSURL*)url;
+
 @end
 
 @interface LJWebserviceHandler : NSObject <LJWebserviceHandlerProtocol>

@@ -10,11 +10,8 @@
 
 @class LJProductImageDownloader;
 
-@protocol LJProductImageDownloaderDelegate  <NSObject>
--(void)imageDownloader:(LJProductImageDownloader*)imageDownloader didFinishDownloading:(UIImage*)image for:(NSString*)productId;
-@end
+typedef void(^ImageDownloaderBlock)(UIImage* downloadedImage, NSString* productId, NSError* error);
 
 @interface LJProductImageDownloader : NSObject
-@property (nonatomic, weak) id<LJProductImageDownloaderDelegate> delegate;
--(void)getImageForProductId:(NSString*)productId withURL:(NSURL*)url;
+-(void)getImageForProductId:(NSString*)productId withURL:(NSURL*)url completionBlock:(ImageDownloaderBlock)completionBlock;
 @end

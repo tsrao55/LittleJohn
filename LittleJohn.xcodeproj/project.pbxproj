@@ -32,6 +32,8 @@
 		1627A17D1D7FEF2F005F560E /* ProductsSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 1627A17C1D7FEF2F005F560E /* ProductsSample.json */; };
 		1627A1811D7FF4F7005F560E /* LJProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */; };
 		1627A1821D7FF4F7005F560E /* LJProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */; };
+		164D37FB1D81C6A000926F3C /* LJProductsDownloadManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 164D37FA1D81C6A000926F3C /* LJProductsDownloadManagerTests.m */; };
+		164D37FF1D81C72200926F3C /* LJStubbedWebServiceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 164D37FE1D81C72200926F3C /* LJStubbedWebServiceHandler.m */; };
 		168B02F61D81457300B77EFB /* ProductsSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 1627A17C1D7FEF2F005F560E /* ProductsSample.json */; };
 		168B02F91D8147C300B77EFB /* LJProductImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 168B02F81D8147C300B77EFB /* LJProductImageDownloader.m */; };
 /* End PBXBuildFile section */
@@ -87,6 +89,9 @@
 		1627A17C1D7FEF2F005F560E /* ProductsSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProductsSample.json; path = Parsers/ProductsSample.json; sourceTree = "<group>"; };
 		1627A17F1D7FF4F7005F560E /* LJProductsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProductsViewModel.h; path = "View Models/LJProductsViewModel.h"; sourceTree = "<group>"; };
 		1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductsViewModel.m; path = "View Models/LJProductsViewModel.m"; sourceTree = "<group>"; };
+		164D37FA1D81C6A000926F3C /* LJProductsDownloadManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductsDownloadManagerTests.m; path = DownloadManagers/LJProductsDownloadManagerTests.m; sourceTree = "<group>"; };
+		164D37FD1D81C72200926F3C /* LJStubbedWebServiceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJStubbedWebServiceHandler.h; path = Helpers/LJStubbedWebServiceHandler.h; sourceTree = "<group>"; };
+		164D37FE1D81C72200926F3C /* LJStubbedWebServiceHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJStubbedWebServiceHandler.m; path = Helpers/LJStubbedWebServiceHandler.m; sourceTree = "<group>"; };
 		168B02F71D8147C300B77EFB /* LJProductImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProductImageDownloader.h; path = "Download Manager/LJProductImageDownloader.h"; sourceTree = "<group>"; };
 		168B02F81D8147C300B77EFB /* LJProductImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductImageDownloader.m; path = "Download Manager/LJProductImageDownloader.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,12 +146,12 @@
 			children = (
 				1627A17E1D7FF48F005F560E /* View Models */,
 				1627A1641D7F3B46005F560E /* Data Models */,
-				1627A15F1D7F3A44005F560E /* Download Managers */,
 				1627A1741D7FED04005F560E /* Parsers */,
+				1627A15F1D7F3A44005F560E /* Download Managers */,
 				1602508D1D7E9AC80083C792 /* Network Module */,
+				160EED381D8078D0002A14B0 /* UI */,
 				1602505D1D7E9AB70083C792 /* AppDelegate.h */,
 				1602505E1D7E9AB70083C792 /* AppDelegate.m */,
-				160EED381D8078D0002A14B0 /* UI */,
 				160250631D7E9AB70083C792 /* Main.storyboard */,
 				160250661D7E9AB70083C792 /* Assets.xcassets */,
 				160250681D7E9AB70083C792 /* LaunchScreen.storyboard */,
@@ -167,6 +172,8 @@
 		160250731D7E9AB70083C792 /* LittleJohnTests */ = {
 			isa = PBXGroup;
 			children = (
+				164D37FC1D81C6FF00926F3C /* Helpers */,
+				164D37F91D81C67000926F3C /* DownloadManager */,
 				160EED361D8071A5002A14B0 /* View Models */,
 				1627A1791D7FEED2005F560E /* Parsers */,
 				1627A16D1D7F42A1005F560E /* Data Models */,
@@ -299,6 +306,23 @@
 				1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */,
 			);
 			name = "View Models";
+			sourceTree = "<group>";
+		};
+		164D37F91D81C67000926F3C /* DownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				164D37FA1D81C6A000926F3C /* LJProductsDownloadManagerTests.m */,
+			);
+			name = DownloadManager;
+			sourceTree = "<group>";
+		};
+		164D37FC1D81C6FF00926F3C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				164D37FD1D81C72200926F3C /* LJStubbedWebServiceHandler.h */,
+				164D37FE1D81C72200926F3C /* LJStubbedWebServiceHandler.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +476,7 @@
 			files = (
 				1627A1781D7FED4D005F560E /* LJProductsResponseParser.m in Sources */,
 				160250751D7E9AB70083C792 /* LittleJohnTests.m in Sources */,
+				164D37FB1D81C6A000926F3C /* LJProductsDownloadManagerTests.m in Sources */,
 				1627A1681D7F3B76005F560E /* LJProduct.m in Sources */,
 				1627A1821D7FF4F7005F560E /* LJProductsViewModel.m in Sources */,
 				1627A17B1D7FEEFD005F560E /* LJProductsResponseParserTests.m in Sources */,
@@ -459,6 +484,7 @@
 				160EED3F1D807948002A14B0 /* LJProductCollectionViewCell.m in Sources */,
 				160250941D7E9DA40083C792 /* LJWebserviceHandlerTests.m in Sources */,
 				1627A1731D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */,
+				164D37FF1D81C72200926F3C /* LJStubbedWebServiceHandler.m in Sources */,
 				160250911D7E9B070083C792 /* LJWebserviceHandler.m in Sources */,
 				1627A16F1D7F42D3005F560E /* LJProductTests.m in Sources */,
 			);

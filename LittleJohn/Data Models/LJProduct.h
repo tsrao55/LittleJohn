@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 static NSString * const kProductIDKey = @"productId";
 static NSString * const kProductPriceKey = @"price";
@@ -20,6 +21,7 @@ static NSString * const kProductImageKey = @"image";
 @property (nonatomic, readonly) NSNumber* currentPrice;
 @property (nonatomic, readonly) NSString* title;
 @property (nonatomic, readonly) NSURL* imageURL;
+@property (nonatomic, strong) UIImage* downloadedImage;
 @property (nonatomic, readonly) NSString* currentPriceString;
 
 -(id)initWithDictionary:(NSDictionary*)productDictionary;

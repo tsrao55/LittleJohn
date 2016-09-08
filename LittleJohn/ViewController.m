@@ -59,6 +59,14 @@ static NSString* const kProductCellIdentifier = @"ppp";
     LJProduct *product = self.viewModel.productsArray[indexPath.row];
     cell.productTitleLabel.text = product.title;
     cell.productPriceLabel.text = product.currentPriceString;
+    if (product.downloadedImage)
+    {
+      cell.productImageView.image = product.downloadedImage;
+    }
+    else
+    {
+      [self.viewModel downloadImageAtIndex:indexPath.row];
+    }
   }
   return cell;
 }
@@ -95,6 +103,18 @@ static NSString* const kProductCellIdentifier = @"ppp";
 {
   //Ideally, needs to insert new rows
   [self.productsCollectionView reloadData];
+}
+
+-(void)viewModel:(LJProductsViewModel *)viewModel didFinishedDownloadingImageAtIndex:(NSInteger)index
+{
+  NSArray *visibleIndexes = [self.productsCollectionView indexPathsForVisibleItems];
+  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+  if ([visibleIndexes containsObject:indexPath])
+  {
+    LJProductCollectionViewCell *cell = (LJProductCollectionViewCell*)[self.productsCollectionView cellForItemAtIndexPath:indexPath];
+    LJProduct *pro = self.viewModel.productsArray[index];
+    cell.productImageView.image = pro.downloadedImage;
+  }
 }
 
 @end

@@ -20,23 +20,9 @@ static NSString* const productURL = @"https://api.johnlewis.com/v1/products/sear
 
 -(void)getLatestProducts
 {
-  
-  //CODEREVIEW: this is quite controversial... dont use new in objc i like but some dont....
   self.webServiceHandler = [[LJWebserviceHandler alloc] init];
   self.webServiceHandler.delegate = self;
-//  [webServiceHandler getDataForURL:[NSURL URLWithString:productURL] withBody:nil];
-  
-  NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"ProductsSample" ofType:@"json"];
-  NSData *jsonData = [NSData dataWithContentsOfFile:path];
-  NSError *jsonError;
-  NSDictionary *productsResponse = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                   options:NSJSONReadingAllowFragments
-                                                                     error:&jsonError];
-  if (!jsonError)
-  {
-    NSArray *products = [LJProductsResponseParser parseProductsFromResponse:productsResponse];
-    [self.delegate downloadManager:self didGetLatestProducts:products];
-  }
+  [self.webServiceHandler getDataForURL:[NSURL URLWithString:productURL] withBody:nil];
 }
 
 #pragma mark - LJWebserviceHandlerDelegate

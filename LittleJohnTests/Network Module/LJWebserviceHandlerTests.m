@@ -28,7 +28,7 @@
 - (void)testGetDataWithURL
 {
   self.downloadExpectation = [self expectationWithDescription:@"download data"];
-  LJWebserviceHandler *webServiceHandler = [LJWebserviceHandler new];
+  LJWebserviceHandler *webServiceHandler = [[LJWebserviceHandler alloc] init];
   webServiceHandler.delegate = self;
   
   [webServiceHandler getDataForURL:[NSURL URLWithString:@"https://api.johnlewis.com/v1/products/search?q=dishwasher&key=Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb&pageSize=20"] withBody:nil];

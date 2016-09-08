@@ -12,6 +12,7 @@
 
 @protocol LJProductsViewModelDelegate <NSObject>
 -(void)viewModel:(LJProductsViewModel*)viewModel didFinifhLoadingProducts:(NSArray*)productsArray;
+-(void)viewModel:(LJProductsViewModel*)viewModel didFinishedDownloadingImageAtIndex:(NSInteger)index;
 @end
 
 @interface LJProductsViewModel : NSObject
@@ -22,4 +23,6 @@
 
 -(void)loadProducts;
 //needs to add method to retrieve products for next page
+
+-(void)downloadImageAtIndex:(NSInteger)index;
 @end

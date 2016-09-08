@@ -31,13 +31,29 @@
   }
   NSURLSessionDataTask *theTask = [urlSession dataTaskWithRequest:theRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
   {
-    if (self.delegate)
-    {
-      [self.delegate webServiceHandler:self didFinishWithRespose:data withError:error];
-    }
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      if (self.delegate)
+      {
+        [self.delegate webServiceHandler:self didFinishWithRespose:data withError:error];
+      }
+    });
   }];
   [theTask resume];
+}
+
+-(void)downloadImageForURL:(NSURL *)url
+{
+  NSURLSessionDownloadTask *downloadTask = [[NSURLSession sharedSession] downloadTaskWithURL:url completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+      NSData *data = [NSData dataWithContentsOfURL:location];
+      
+      if (self.delegate && data)
+      {
+        [self.delegate webServiceHandler:self didFinishWithRespose:data withError:nil];
+      }
+    });
+  }];
+  [downloadTask resume];
 }
 
 @end
