@@ -47,14 +47,16 @@
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(nonnull NSURL *)location
 {
-  NSData *downloadedData = [NSData dataWithContentsOfURL:location];
-  
-  if ([self.delegate respondsToSelector:@selector(webServiceHandler:didFinishWithRespose:withError:)])
-  {
-    [self.delegate webServiceHandler:self didFinishWithRespose:downloadedData withError:nil];
-  }
-  
-  self.downloaded = YES;
+  dispatch_async(dispatch_get_main_queue(), ^{
+    NSData *downloadedData = [NSData dataWithContentsOfURL:location];
+    
+    if ([self.delegate respondsToSelector:@selector(webServiceHandler:didFinishWithRespose:withError:)])
+    {
+      [self.delegate webServiceHandler:self didFinishWithRespose:downloadedData withError:nil];
+    }
+    
+    self.downloaded = YES;
+  });
 }
 
 @end
