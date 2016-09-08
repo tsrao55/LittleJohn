@@ -49,7 +49,7 @@
   XCTAssertTrue([product.productID isEqualToString:@"2915517"]);
   XCTAssertTrue([product.title isEqualToString:@"Whirlpool WFO3P33DLUK Freestanding Dishwasher, WhIte"]);
   XCTAssertTrue([product.currentPriceString isEqualToString:@"£599.00"]);
-  XCTAssertTrue([product.imageURL isEqual:[NSURL URLWithString:@"//johnlewis.scene7.com/is/image/JohnLewis/236331171?"]]);
+  XCTAssertTrue([product.imageURL isEqual:[NSURL URLWithString:@"https://johnlewis.scene7.com/is/image/JohnLewis/236331171?"]]);
 }
 
 @end
