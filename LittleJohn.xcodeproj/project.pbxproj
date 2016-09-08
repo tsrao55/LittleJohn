@@ -19,6 +19,8 @@
 		160250911D7E9B070083C792 /* LJWebserviceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1602508F1D7E9B070083C792 /* LJWebserviceHandler.m */; };
 		160250941D7E9DA40083C792 /* LJWebserviceHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 160250931D7E9DA40083C792 /* LJWebserviceHandlerTests.m */; };
 		160EED351D806FFF002A14B0 /* LLJProductsViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 160EED341D806FFF002A14B0 /* LLJProductsViewModelTests.m */; };
+		160EED3E1D807948002A14B0 /* LJProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 160EED3D1D807948002A14B0 /* LJProductCollectionViewCell.m */; };
+		160EED3F1D807948002A14B0 /* LJProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 160EED3D1D807948002A14B0 /* LJProductCollectionViewCell.m */; };
 		1627A1671D7F3B76005F560E /* LJProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1661D7F3B76005F560E /* LJProduct.m */; };
 		1627A1681D7F3B76005F560E /* LJProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1661D7F3B76005F560E /* LJProduct.m */; };
 		1627A16F1D7F42D3005F560E /* LJProductTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A16E1D7F42D3005F560E /* LJProductTests.m */; };
@@ -30,6 +32,7 @@
 		1627A17D1D7FEF2F005F560E /* ProductsSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 1627A17C1D7FEF2F005F560E /* ProductsSample.json */; };
 		1627A1811D7FF4F7005F560E /* LJProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */; };
 		1627A1821D7FF4F7005F560E /* LJProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */; };
+		168B02F61D81457300B77EFB /* ProductsSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 1627A17C1D7FEF2F005F560E /* ProductsSample.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,8 @@
 		1602508F1D7E9B070083C792 /* LJWebserviceHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJWebserviceHandler.m; path = "Network Module/LJWebserviceHandler.m"; sourceTree = "<group>"; };
 		160250931D7E9DA40083C792 /* LJWebserviceHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJWebserviceHandlerTests.m; path = "Network Module/LJWebserviceHandlerTests.m"; sourceTree = "<group>"; };
 		160EED341D806FFF002A14B0 /* LLJProductsViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLJProductsViewModelTests.m; path = "LittleJohnTests/View Models/LLJProductsViewModelTests.m"; sourceTree = SOURCE_ROOT; };
+		160EED3C1D807948002A14B0 /* LJProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProductCollectionViewCell.h; path = "UI/Product Grid/Cells/LJProductCollectionViewCell.h"; sourceTree = "<group>"; };
+		160EED3D1D807948002A14B0 /* LJProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductCollectionViewCell.m; path = "UI/Product Grid/Cells/LJProductCollectionViewCell.m"; sourceTree = "<group>"; };
 		1627A1651D7F3B76005F560E /* LJProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJProduct.h; path = "Data Models/LJProduct.h"; sourceTree = "<group>"; };
 		1627A1661D7F3B76005F560E /* LJProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProduct.m; path = "Data Models/LJProduct.m"; sourceTree = "<group>"; };
 		1627A16E1D7F42D3005F560E /* LJProductTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJProductTests.m; path = "Data Models/LJProductTests.m"; sourceTree = "<group>"; };
@@ -138,8 +143,7 @@
 				1602508D1D7E9AC80083C792 /* Network Module */,
 				1602505D1D7E9AB70083C792 /* AppDelegate.h */,
 				1602505E1D7E9AB70083C792 /* AppDelegate.m */,
-				160250601D7E9AB70083C792 /* ViewController.h */,
-				160250611D7E9AB70083C792 /* ViewController.m */,
+				160EED381D8078D0002A14B0 /* UI */,
 				160250631D7E9AB70083C792 /* Main.storyboard */,
 				160250661D7E9AB70083C792 /* Assets.xcassets */,
 				160250681D7E9AB70083C792 /* LaunchScreen.storyboard */,
@@ -160,6 +164,7 @@
 		160250731D7E9AB70083C792 /* LittleJohnTests */ = {
 			isa = PBXGroup;
 			children = (
+				160EED361D8071A5002A14B0 /* View Models */,
 				1627A1791D7FEED2005F560E /* Parsers */,
 				1627A16D1D7F42A1005F560E /* Data Models */,
 				160250921D7E9D730083C792 /* Network Module */,
@@ -193,6 +198,49 @@
 				160250931D7E9DA40083C792 /* LJWebserviceHandlerTests.m */,
 			);
 			name = "Network Module";
+			sourceTree = "<group>";
+		};
+		160EED361D8071A5002A14B0 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				160EED341D806FFF002A14B0 /* LLJProductsViewModelTests.m */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		160EED381D8078D0002A14B0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				160EED391D8078DD002A14B0 /* Products Grid */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		160EED391D8078DD002A14B0 /* Products Grid */ = {
+			isa = PBXGroup;
+			children = (
+				160EED3B1D807901002A14B0 /* Cells */,
+				160EED3A1D8078F1002A14B0 /* View Controller */,
+			);
+			name = "Products Grid";
+			sourceTree = "<group>";
+		};
+		160EED3A1D8078F1002A14B0 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				160250601D7E9AB70083C792 /* ViewController.h */,
+				160250611D7E9AB70083C792 /* ViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		160EED3B1D807901002A14B0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				160EED3C1D807948002A14B0 /* LJProductCollectionViewCell.h */,
+				160EED3D1D807948002A14B0 /* LJProductCollectionViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		1627A15F1D7F3A44005F560E /* Download Managers */ = {
@@ -244,7 +292,6 @@
 			children = (
 				1627A17F1D7FF4F7005F560E /* LJProductsViewModel.h */,
 				1627A1801D7FF4F7005F560E /* LJProductsViewModel.m */,
-				160EED341D806FFF002A14B0 /* LLJProductsViewModelTests.m */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -353,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1602506A1D7E9AB70083C792 /* LaunchScreen.storyboard in Resources */,
+				168B02F61D81457300B77EFB /* ProductsSample.json in Resources */,
 				160250671D7E9AB70083C792 /* Assets.xcassets in Resources */,
 				160250651D7E9AB70083C792 /* Main.storyboard in Resources */,
 			);
@@ -382,6 +430,7 @@
 			files = (
 				1627A1771D7FED4D005F560E /* LJProductsResponseParser.m in Sources */,
 				160250621D7E9AB70083C792 /* ViewController.m in Sources */,
+				160EED3E1D807948002A14B0 /* LJProductCollectionViewCell.m in Sources */,
 				1602505F1D7E9AB70083C792 /* AppDelegate.m in Sources */,
 				1602505C1D7E9AB70083C792 /* main.m in Sources */,
 				1627A1721D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */,
@@ -401,6 +450,7 @@
 				1627A1821D7FF4F7005F560E /* LJProductsViewModel.m in Sources */,
 				1627A17B1D7FEEFD005F560E /* LJProductsResponseParserTests.m in Sources */,
 				160EED351D806FFF002A14B0 /* LLJProductsViewModelTests.m in Sources */,
+				160EED3F1D807948002A14B0 /* LJProductCollectionViewCell.m in Sources */,
 				160250941D7E9DA40083C792 /* LJWebserviceHandlerTests.m in Sources */,
 				1627A1731D7FD2FE005F560E /* LJProductDownloadManager.m in Sources */,
 				160250911D7E9B070083C792 /* LJWebserviceHandler.m in Sources */,

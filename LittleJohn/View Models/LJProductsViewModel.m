@@ -12,9 +12,9 @@
 
 @interface LJProductsViewModel() <LJProductDownloadManagerDelegate>
 
-@property (nonatomic, strong) NSArray *productsArray;
+@property (nonatomic, strong) NSMutableArray *productsArray;
 @property (nonatomic, assign) BOOL loading;
-
+@property (nonatomic, strong) LJProductDownloadManager *downloadManager;
 @property (nonatomic, retain) ViewController* productsVC;
 
 @end
@@ -25,9 +25,9 @@
 {
   if (!self.loading)
   {
-    LJProductDownloadManager *downloadManager = [LJProductDownloadManager new];
-    downloadManager.delegate = self;
-    [downloadManager getLatestProducts];
+    self.downloadManager = [LJProductDownloadManager new];
+    self.downloadManager.delegate = self;
+    [self.downloadManager getLatestProducts];
     self.loading = YES;
   }
 }
@@ -38,7 +38,16 @@
   self.loading = NO;
   if (products)
   {
-    self.productsArray = products;
+    if (!self.productsArray)
+    {
+      self.productsArray = [NSMutableArray array];
+    }
+    [self.productsArray addObjectsFromArray:products];
+    
+    if ([self.delegate respondsToSelector:@selector(viewModel:didFinifhLoadingProducts:)])
+    {
+      [self.delegate viewModel:self didFinifhLoadingProducts:self.productsArray];
+    }
   }
 }
 @end
