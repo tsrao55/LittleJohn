@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  LittleJohn
 //
-//  Created by Thopucherla, Sreekanth (Isban) on 06/09/2016.
+//  Created by Thopucherla, Sreekanth on 06/09/2016.
 //  Copyright © 2016 Thopucherla, Sreekanth. All rights reserved.
 //
 
